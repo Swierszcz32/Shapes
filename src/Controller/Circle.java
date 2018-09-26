@@ -30,21 +30,52 @@ public class Circle extends Shapes{
 		g.setColor(Color.WHITE);
 		g.drawString(toString(), (randomShapes.widthFrame - 200), ( 50 + i ));
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return true;
-		}
-		if (obj instanceof Circle) {
-			Circle circle = (Circle) obj;
-			return getRadius() == circle.getRadius() && getColor().equals(circle.getColor()); 
-		}
-		return true;
-	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (obj == null) {
+//			return true;
+//		}
+//		if (obj instanceof Circle) {
+//			Circle circle = (Circle) obj;
+//			return getRadius() == circle.getRadius() && getColor().equals(circle.getColor()); 
+//		}
+//		return true;
+//	}
 	@Override
 	public String toString() {
 		return " Ko³o "+this.getColor().getRed()+"-"+
 				this.getColor().getGreen()+"-"+this.getColor().getBlue()+" "+area();
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + radius;
+		return result;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (!(obj instanceof Circle)) {
+			return false;
+		}
+		Circle other = (Circle) obj;
+		if (radius != other.radius) {
+			return false;
+		}
+		return true;
+	}
+	
 	
 }

@@ -9,11 +9,11 @@ import java.awt.*;
 
 public class RandomShapes {
 		
-	public ArrayList<Shapes> list;
+	public HashSet<Shapes> list;
 	int widthFrame;
 	int heightFrame;
 	public RandomShapes() {
-		list = new ArrayList<Shapes>();
+		list = new HashSet<Shapes>();
 		widthFrame = Toolkit.getDefaultToolkit().getScreenSize().width;
 		heightFrame = Toolkit.getDefaultToolkit().getScreenSize().height;
 	}
@@ -52,32 +52,35 @@ public class RandomShapes {
 		if(list.isEmpty()) {
 			list.add(circle);
 		}
-		int tmp = 0;
-		int tmp1 = 0;
-			for(Shapes shape : list) {
-				if(!(shape instanceof Circle))	{
-					tmp1 = 1;
-				} else tmp1 = 2;
-				if(!(shape.equals(circle))){
-					tmp = 1;
-				} else tmp = 2;
-			} 
-			if(tmp1 == 1) { 
-				System.out.println("Pierwsze Ko³o"); 
-			} 
-			if(tmp1 == 2) {
-				System.out.println("Ko³a obecne ju¿");
-			}
-			if(tmp == 1) {
-				System.out.println("Ko³o poprawne");
-			}
-			if(tmp == 2) {
-				System.out.println("Ko³o Powtórzone");
-			}
-			if(tmp == 1 || tmp1 == 1) {
-				list.add(circle);
-				System.out.println(circle.toString());
-			}
+//		int tmp = 0;
+//		int tmp1 = 0;
+//			for(Shapes shape : list) {
+//				if(!(shape instanceof Circle))	{
+//					tmp1 = 1;
+//				} else tmp1 = 2;
+//				if(!(shape.equals(circle))){
+//					tmp = 1;
+//				} else tmp = 2;
+//			} 
+//			if(tmp1 == 1) { 
+//				System.out.println("Pierwsze Ko³o"); 
+//			} 
+//			if(tmp1 == 2) {
+//				System.out.println("Ko³a obecne ju¿");
+//			}
+//			if(tmp == 1) {
+//				System.out.println("Ko³o poprawne");
+//			}
+//			if(tmp == 2) {
+//				System.out.println("Ko³o Powtórzone");
+//			}
+//			if(tmp == 1 || tmp1 == 1) {
+//				list.add(circle);
+//				System.out.println(circle.toString());
+//			}
+		if(!(list.contains(circle))) {
+			list.add(circle);
+		}
 	}
 	public void generateRectangles() {
 		Controller.Rectangle rectangle = new Controller.Rectangle(randomCoordinatesOfX(), randomCoordinatesOfY(), randomColor());
@@ -86,19 +89,22 @@ public class RandomShapes {
 		if(list.isEmpty()) {
 			list.add(rectangle);
 		}
-		int tmp = 0;
-		int tmp1 = 0;
-		for(Shapes shape : list) {
-			if (!(shape instanceof Rectangle)) {
-				tmp1 = 1;
-			} else tmp1 = 2;
-			if(!(shape.equals(rectangle))){
-				tmp = 1;
-			} else tmp = 2;
-		} 
-		if(tmp == 1 || tmp1 == 1) {
+//		int tmp = 0;
+//		int tmp1 = 0;
+//		for(Shapes shape : list) {
+//			if (!(shape instanceof Rectangle)) {
+//				tmp1 = 1;
+//			} else tmp1 = 2;
+//			if(!(shape.equals(rectangle))){
+//				tmp = 1;
+//			} else tmp = 2;
+//		} 
+//		if(tmp == 1 || tmp1 == 1) {
+//			list.add(rectangle);
+//			System.out.println(rectangle.toString());
+//		}
+		if(!(list.contains(rectangle))) {
 			list.add(rectangle);
-			System.out.println(rectangle.toString());
 		}
 	}
 	public void generateSquare() {
@@ -107,19 +113,22 @@ public class RandomShapes {
 		if(list.isEmpty()) {
 			list.add(square);
 		}
-		int tmp = 0;
-		int tmp1 = 0;
-		for(Shapes shape : list) {
-			if(shape instanceof Square) {
-				tmp1 = 1;
-			} else tmp1 = 2;
-			if(!(shape.equals(square))){
-				tmp = 1;
-			} else tmp = 2;
-		} 
-		if(tmp == 1) {
+//		int tmp = 0;
+//		int tmp1 = 0;
+//		for(Shapes shape : list) {
+//			if(shape instanceof Square) {
+//				tmp1 = 1;
+//			} else tmp1 = 2;
+//			if(!(shape.equals(square))){
+//				tmp = 1;
+//			} else tmp = 2;
+//		} 
+//		if(tmp == 1) {
+//			list.add(square);
+//			System.out.println(square.toString());
+//		}
+		if(!(list.contains(square))) {
 			list.add(square);
-			System.out.println(square.toString());
 		}
 	}
 }

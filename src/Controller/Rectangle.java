@@ -37,18 +37,18 @@ public class Rectangle extends Shapes{
 		g.setColor(Color.WHITE);
 		g.drawString(toString(), (randomShapes.widthFrame - 200), ( 50 + i ));
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return true;
-		}
-		if (obj instanceof Rectangle) {
-			Rectangle rectangle = (Controller.Rectangle) obj;
-			return getHeight() == rectangle.getHeight() && 
-					getColor().equals(rectangle.getColor()) && getWidth() == rectangle.getWidth();
-		}
-		return true;
-	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (obj == null) {
+//			return true;
+//		}
+//		if (obj instanceof Rectangle) {
+//			Rectangle rectangle = (Controller.Rectangle) obj;
+//			return getHeight() == rectangle.getHeight() && 
+//					getColor().equals(rectangle.getColor()) && getWidth() == rectangle.getWidth();
+//		}
+//		return true;
+//	}
 	
 	
 	
@@ -56,5 +56,39 @@ public class Rectangle extends Shapes{
 	public String toString() {
 		return " Prostok¹t "+this.getColor().getRed()+"-"+
 				this.getColor().getGreen()+"-"+this.getColor().getBlue()+" "+area();
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + height;
+		result = prime * result + width;
+		return result;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (!(obj instanceof Rectangle)) {
+			return false;
+		}
+		Rectangle other = (Rectangle) obj;
+		if (height != other.height) {
+			return false;
+		}
+		if (width != other.width) {
+			return false;
+		}
+		return true;
 	}
 }

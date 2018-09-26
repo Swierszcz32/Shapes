@@ -21,7 +21,6 @@ public class Drawing extends JPanel{
 	private SpringLayout baseLayout;
 	private JButton addShapeButton;
 	private JButton counter;
-	public ArrayList<Shapes> list;
 	
 	private String counterName = "Shape type counter";
 
@@ -32,9 +31,7 @@ public class Drawing extends JPanel{
 		addShapeButton = new JButton("Add Shapes");
 		counter = new JButton(counterName);
 		
-//		shapePanel = new ShapePanel();
 		randomShapes = new RandomShapes();
-		list = new ArrayList<Shapes>();
 		
 		setupPanel();
 		setupLayout();
@@ -47,7 +44,6 @@ public class Drawing extends JPanel{
 		this.setBackground(Color.DARK_GRAY);
 		this.add(addShapeButton);
 		this.add(counter);
-//		this.add(shapePanel);
 	}
 
 	private void setupLayout() {

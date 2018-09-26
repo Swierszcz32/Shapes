@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public interface FeaturesOfShape {
 	
-	//nieu¿yta funkcja stworzona na potrzebe 
-	//umiejscawiania ca³ej powierzchni krzta³tu wewn¹trz zadeklarowanej ramki
+	//nieu¿yte funkcje stworzona na potrzebe 
+	//umiejscawiania ca³ej powierzchni krzta³tu wewn¹trz zadeklarowanej ramki(aby nie wysta³ obrys)
 	public int getXPosition();
 	public int getYPosition();
 	//pobieranie koloru obiektu
