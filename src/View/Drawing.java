@@ -40,6 +40,7 @@ public class Drawing extends JPanel{
 
 	
 	private void setupPanel() {
+		//dodawanie do panelu komponentó
 		this.setLayout(baseLayout);
 		this.setBackground(Color.DARK_GRAY);
 		this.add(addShapeButton);
@@ -47,6 +48,7 @@ public class Drawing extends JPanel{
 	}
 
 	private void setupLayout() {
+		//ustawianie layoutów
 		baseLayout.putConstraint(SpringLayout.WEST, addShapeButton, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, addShapeButton, -40, SpringLayout.SOUTH, this);
 		
@@ -68,7 +70,7 @@ public class Drawing extends JPanel{
 					randomShapes.generateRectangles();
 			
 				repaint();
-				
+								
 				counter.setEnabled(true);
 				counter.setText(counterName);
 			}
@@ -112,6 +114,7 @@ public class Drawing extends JPanel{
 		mainGraphics.drawString("Kszta³t RGB Pole", Toolkit.getDefaultToolkit().getScreenSize().width-200, 50);
 		for(Shapes shape : randomShapes.list ) {
 			i = i + 15;
+			
 			if(shape.getClass().isAssignableFrom(Circle.class)) {
 				shape.draw(g,i);
 			} else if(shape.getClass().isAssignableFrom(Controller.Rectangle.class)){
