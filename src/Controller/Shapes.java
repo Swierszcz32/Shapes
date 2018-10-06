@@ -6,11 +6,11 @@ public abstract class Shapes implements FeaturesOfShape {
 	
 	
 	
-	protected Color color;
-	protected int xPosition;
-	protected int yPosition;
+	private Color color;
+	private int xPosition;
+	private int yPosition;
 	
-	public RandomShapes randomShapes;
+	protected RandomShapes randomShapes;
 	
 	public Shapes(int x, int y, Color c) {
 		xPosition = x;

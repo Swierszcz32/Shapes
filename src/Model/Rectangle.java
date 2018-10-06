@@ -37,7 +37,7 @@ public class Rectangle extends Shapes{
 		g.setColor(getColor());
 		g.fillRect(getXPosition(), getYPosition(), getWidth(), getHeight());
 		g.setColor(Color.WHITE);
-		g.drawString(toString(), (randomShapes.widthFrame - 200), ( 50 + i ));
+		g.drawString(toString(), (randomShapes.getWidthFrame() - randomShapes.getBorderTmp()), ( 50 + i ));
 	}
 
 	@Override

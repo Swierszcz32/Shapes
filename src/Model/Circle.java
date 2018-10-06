@@ -30,19 +30,9 @@ public class Circle extends Shapes{
 		g.setColor(getColor());
 		g.fillOval(getXPosition(), getYPosition(), getRadius(), getRadius());
 		g.setColor(Color.WHITE);
-		g.drawString(toString(), (randomShapes.widthFrame - 200), ( 50 + i ));
+		g.drawString(toString(), (randomShapes.getWidthFrame() - randomShapes.getBorderTmp()), ( 50 + i ));
 	}
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (obj == null) {
-//			return true;
-//		}
-//		if (obj instanceof Circle) {
-//			Circle circle = (Circle) obj;
-//			return getRadius() == circle.getRadius() && getColor().equals(circle.getColor()); 
-//		}
-//		return true;
-//	}
+
 	@Override
 	public String toString() {
 		return " Ko³o "+this.getColor().getRed()+"-"+

@@ -4,6 +4,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class Frame extends JFrame{
 	
 	Drawing drawing = new Drawing();
@@ -13,17 +14,10 @@ public class Frame extends JFrame{
 		int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 		int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 		this.setSize(width, height);
-		int widthFrame = this.getSize().width;
-		int heightFrame = this.getSize().height;
-		
-		this.setLocation((width - widthFrame)/2, (height - heightFrame)/2);
+		this.setLocationRelativeTo(null);
 		this.add(drawing);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setVisible(true);
 		
-
-	}
-
-	public static void main(String[] args) {
-		new Frame().setVisible(true);
 	}
 }

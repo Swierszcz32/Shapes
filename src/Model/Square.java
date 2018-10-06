@@ -29,21 +29,9 @@ public class Square extends Shapes{
 		g.setColor(getColor());
 		g.fillRect(getXPosition(), getYPosition(), getSide(), getSide());
 		g.setColor(Color.WHITE);
-		g.drawString(toString(), (randomShapes.widthFrame - 200), ( 50 + i ));
+		g.drawString(toString(), (randomShapes.getWidthFrame() - randomShapes.getBorderTmp()), ( 50 + i ));
 	}
-//	
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (obj == null) {
-//			return true;
-//		}
-//		if (obj instanceof Square) {
-//			Square square = (Square) obj;
-//			return getSide() == square.getSide() && getColor().equals(square.getColor()); 
-//		}
-//		return true;
-//	}
-	
+
 	@Override
 	public String toString() {
 		return " Kwadrat "+this.getColor().getRed()+"-"+

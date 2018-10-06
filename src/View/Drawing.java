@@ -4,22 +4,17 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.*;
 
 import Controller.*;
-import Model.Circle;
-import Model.Square;
 
+@SuppressWarnings("serial")
 public class Drawing extends JPanel{
-	
-	int i = 0;
-	
+		
 	private SpringLayout baseLayout;
 	private JButton addShapeButton;
 	private JButton counter;
@@ -86,13 +81,13 @@ public class Drawing extends JPanel{
 				int rectangles = 0;
 				int squares = 0;
 				for(Shapes shape : randomShapes.list) {
-					if(shape instanceof Circle) {
+					if(shape instanceof Model.Circle) {
 						circles++;
 					}
 					if(shape instanceof  Model.Rectangle) {
 						rectangles++;
 					}
-					if(shape instanceof Square) {
+					if(shape instanceof Model.Square) {
 						squares++;
 					}
 				}
@@ -117,7 +112,7 @@ public class Drawing extends JPanel{
 		for(Shapes shape : randomShapes.list ) {
 			i = i + 15;
 			
-			if(shape.getClass().isAssignableFrom(Circle.class)) {
+			if(shape.getClass().isAssignableFrom(Model.Circle.class)) {
 				shape.draw(g,i);
 			} else if(shape.getClass().isAssignableFrom(Model.Rectangle.class)){
 				shape.draw(g,i);
