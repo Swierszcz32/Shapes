@@ -2,21 +2,21 @@ package Controller;
 
 import java.util.*;
 
-import javax.swing.JFrame;
-
 import java.awt.*;
 
 
 public class RandomShapes {
 		
 	public HashSet<Shapes> list;
-	int widthFrame;
-	int heightFrame;
+	public int widthFrame;
+	public int heightFrame;
+	
 	public RandomShapes() {
 		list = new HashSet<Shapes>();
 		widthFrame = Toolkit.getDefaultToolkit().getScreenSize().width;
 		heightFrame = Toolkit.getDefaultToolkit().getScreenSize().height;
 	}
+	
 	public int shapeSelection() {
 		int tmp = (int) (Math.random() * 3 + 1);
 		return tmp;
@@ -47,7 +47,7 @@ public class RandomShapes {
 		return randomColor;
 	}
 	public void generateCircle() {
-		Controller.Circle circle = new Circle(randomCoordinatesOfX(), randomCoordinatesOfY(), randomColor());
+		Model.Circle circle = new Model.Circle(randomCoordinatesOfX(), randomCoordinatesOfY(), randomColor());
 		circle.setRadius(randomRadius());
 		if(list.isEmpty()) {
 			list.add(circle);
@@ -58,7 +58,7 @@ public class RandomShapes {
 		}
 	}
 	public void generateRectangles() {
-		Controller.Rectangle rectangle = new Controller.Rectangle(randomCoordinatesOfX(), randomCoordinatesOfY(), randomColor());
+		Model.Rectangle rectangle = new Model.Rectangle(randomCoordinatesOfX(), randomCoordinatesOfY(), randomColor());
 		rectangle.setHeight(randomSide());
 		rectangle.setWidth(randomSide());
 		if(list.isEmpty()) {
@@ -70,7 +70,7 @@ public class RandomShapes {
 		}
 	}
 	public void generateSquare() {
-		Controller.Square square = new Square(randomCoordinatesOfX() , randomCoordinatesOfY(), randomColor());
+		Model.Square square = new Model.Square(randomCoordinatesOfX() , randomCoordinatesOfY(), randomColor());
 		square.setSide(randomSide());
 		if(list.isEmpty()) {
 			list.add(square);

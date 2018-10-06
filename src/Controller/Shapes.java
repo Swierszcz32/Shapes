@@ -10,12 +10,13 @@ public abstract class Shapes implements FeaturesOfShape {
 	protected int xPosition;
 	protected int yPosition;
 	
-	RandomShapes randomShapes = new RandomShapes();
+	public RandomShapes randomShapes;
 	
 	public Shapes(int x, int y, Color c) {
 		xPosition = x;
 		yPosition = y;
 		color = c;
+		randomShapes = new RandomShapes();
 	}
 
 	@Override

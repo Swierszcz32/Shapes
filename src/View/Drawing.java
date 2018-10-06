@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import Controller.*;
+import Model.Circle;
+import Model.Square;
 
 public class Drawing extends JPanel{
 	
@@ -87,7 +89,7 @@ public class Drawing extends JPanel{
 					if(shape instanceof Circle) {
 						circles++;
 					}
-					if(shape instanceof  Controller.Rectangle) {
+					if(shape instanceof  Model.Rectangle) {
 						rectangles++;
 					}
 					if(shape instanceof Square) {
@@ -117,7 +119,7 @@ public class Drawing extends JPanel{
 			
 			if(shape.getClass().isAssignableFrom(Circle.class)) {
 				shape.draw(g,i);
-			} else if(shape.getClass().isAssignableFrom(Controller.Rectangle.class)){
+			} else if(shape.getClass().isAssignableFrom(Model.Rectangle.class)){
 				shape.draw(g,i);
 			} else {
 				shape.draw(g,i);

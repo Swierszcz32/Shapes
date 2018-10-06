@@ -1,7 +1,9 @@
-package Controller;
+package Model;
 
 import java.awt.Color;
 import java.awt.Graphics;
+
+import Controller.Shapes;
 
 public class Circle extends Shapes{
 
